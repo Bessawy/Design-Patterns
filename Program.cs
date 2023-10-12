@@ -2,6 +2,8 @@
 
 using Singleton;
 
+
+// SingletonClass
 SingletonClass obj = SingletonClass.GetSingletonClass();
 SingletonClass obj2 = SingletonClass.GetSingletonClass();
 
