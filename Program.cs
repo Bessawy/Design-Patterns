@@ -5,6 +5,8 @@ using Prototype;
 using BUilder;
 using Factory;
 using Proxy;
+using System.Text;
+using FlyWeight;
 
 
 // #################################### SingletonClass ############################################
@@ -50,3 +52,8 @@ Console.WriteLine(database.Query("Name"));
 Console.WriteLine("#-------------------------------------------#");
 LoggerProxy proxy = new(database);
 Console.WriteLine(proxy.Query("Name"));
+
+
+// ############################################# Flyweight ######################################
+DrawTree tree = new();
+tree.DrawTrees();
