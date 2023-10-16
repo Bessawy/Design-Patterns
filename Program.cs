@@ -5,7 +5,7 @@ using Prototype;
 using BUilder;
 using Factory;
 using Proxy;
-using System.Text;
+using Decorator;
 using FlyWeight;
 
 
@@ -57,3 +57,11 @@ Console.WriteLine(proxy.Query("Name"));
 // ############################################# Flyweight ######################################
 DrawTree tree = new();
 tree.DrawTrees();
+
+// ############################################ Decorator ######################################
+IPrintConsole source = new BasePrinter();
+source = new DecoretorPrinter_0(source);
+source = new DecoretorPrinter_0(source);
+source = new DecoretorPrinter_1(source);
+source = new DecoretorPrinter_1(source);
+source.PrintText();
