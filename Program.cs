@@ -3,6 +3,7 @@
 using Singleton;
 using Prototype;
 using BUilder;
+using Factory;
 
 
 // #################################### SingletonClass ############################################
@@ -33,4 +34,10 @@ PC newPC_01 = director.BuildPC(builder_01);
 if(newPC_00.cpu != 12 || newPC_01.cpu != 8)
     throw new Exception("Builder is building wrong structures");
 
-
+// ########################################## Factory #########################################
+Dialog dialog;
+dialog = new StylishDialogFactory();
+int x = 5, y = 10;
+dialog.Render(ref x, ref y);
+dialog = new BoringDialogFactory();
+dialog.Render(ref x, ref y);
