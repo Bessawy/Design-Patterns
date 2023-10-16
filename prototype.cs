@@ -12,11 +12,15 @@ abstract class AbstractProtype
     public int x;
     public int y;
 
+    // copy constructor
     public AbstractProtype(AbstractProtype source)
     {
         this.x = source.x;
         this.y = source.y;
     }
+
+    public AbstractProtype()
+    {}
 
     public abstract AbstractProtype Clone();
 }
@@ -30,6 +34,9 @@ class ToCloneA : AbstractProtype
         this.m = source.m;
     } 
 
+    public ToCloneA()
+    {}
+
     public override AbstractProtype Clone()
     {
         return new ToCloneA(this);
@@ -38,12 +45,15 @@ class ToCloneA : AbstractProtype
 
 class ToCloneB : AbstractProtype
 {
-    public string d;
+    public string? d = null;
 
     public ToCloneB(ToCloneB source) : base(source)
     {
         this.d = source.d;
     } 
+
+    public ToCloneB()
+    {}
 
     public override AbstractProtype Clone()
     {
