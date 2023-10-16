@@ -4,6 +4,7 @@ using Singleton;
 using Prototype;
 using BUilder;
 using Factory;
+using Proxy;
 
 
 // #################################### SingletonClass ############################################
@@ -23,7 +24,7 @@ AbstractProtype obj4 = obj3.Clone();
 if(obj3 == obj4 || obj3.x != obj4.x || obj3.y != obj4.y)
     throw new Exception("Object is not a deep copy");
 
-// ############################################# Builder #########################################
+// ########################################## Builder #########################################
 Director director = new();
 GamingPCBuilder_00 builder_00 = new();
 GamingPCBuilder_01 builder_01 = new();
@@ -41,3 +42,11 @@ int x = 5, y = 10;
 dialog.Render(ref x, ref y);
 dialog = new BoringDialogFactory();
 dialog.Render(ref x, ref y);
+
+// ########################################### Proxy ###########################################
+ServiceDatabase database = new();
+Console.WriteLine("#-------------------------------------------#");
+Console.WriteLine(database.Query("Name"));
+Console.WriteLine("#-------------------------------------------#");
+LoggerProxy proxy = new(database);
+Console.WriteLine(proxy.Query("Name"));
