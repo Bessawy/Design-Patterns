@@ -8,6 +8,7 @@ using Proxy;
 using Decorator;
 using FlyWeight;
 using Composite;
+using Bridge;
 
 
 // #################################### SingletonClass ############################################
@@ -18,7 +19,7 @@ if(obj != obj2)
     throw new Exception("Singleton Objects are not the same");
 
 // #################################### Prototype ###############################################
-ToCloneA obj3 = new ToCloneA();
+ToCloneA obj3 = new();
 obj3.x = 5;
 obj3.y = 5;
 obj3.m = 10;
@@ -84,3 +85,9 @@ mainBox.AddItem(smallBox_1);
 if(mainBox.Price() != 28)
     throw new Exception("Wrong price!");
 
+// ######################################### Bridge ##############################################
+Color color = new Red();
+Shape shape = new Circle(4, color);
+
+if(shape.getColorNumber() != 10)
+    throw new Exception("Wrong Color!");
