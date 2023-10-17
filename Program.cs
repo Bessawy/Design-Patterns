@@ -10,6 +10,7 @@ using FlyWeight;
 using Composite;
 using Bridge;
 using Adapter;
+using State;
 
 
 // #################################### SingletonClass ############################################
@@ -104,3 +105,12 @@ Console.WriteLine("-----------------------------------");
 dialog00.Help();
 dialog00.dialogHelp = "Happy party!";
 dialog00.Help();
+
+// ######################################## State Machine ######################################
+WashingMachine machine = new();
+Console.WriteLine("-------------------------------------");
+Console.WriteLine(machine.led);
+machine.Toggle();
+Console.WriteLine(machine.led);
+machine.Toggle();
+Console.WriteLine(machine.led);
