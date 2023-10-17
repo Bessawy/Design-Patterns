@@ -9,6 +9,7 @@ using Decorator;
 using FlyWeight;
 using Composite;
 using Bridge;
+using Adapter;
 
 
 // #################################### SingletonClass ############################################
@@ -24,7 +25,7 @@ obj3.x = 5;
 obj3.y = 5;
 obj3.m = 10;
 AbstractProtype obj4 = obj3.Clone();
-
+https://refactoring.guru/
 if(obj3 == obj4 || obj3.x != obj4.x || obj3.y != obj4.y)
     throw new Exception("Object is not a deep copy");
 
@@ -91,3 +92,8 @@ Shape shape = new Circle(4, color);
 
 if(shape.getColorNumber() != 10)
     throw new Exception("Wrong Color!");
+
+// ######################################### Adaptor ############################################
+SquarePeg square = new(5);
+SquarePegAdaptor adaptor = new(square);
+int radius = adaptor.GetRadius();
