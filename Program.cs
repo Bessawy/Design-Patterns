@@ -97,3 +97,10 @@ if(shape.getColorNumber() != 10)
 SquarePeg square = new(5);
 SquarePegAdaptor adaptor = new(square);
 int radius = adaptor.GetRadius();
+
+// ######################################### Chain ##############################################
+Chain.Dialog dialog00 = new Chain.Dialog();
+Console.WriteLine("-----------------------------------");
+dialog00.Help();
+dialog00.dialogHelp = "Happy party!";
+dialog00.Help();
