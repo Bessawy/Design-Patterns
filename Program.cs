@@ -7,6 +7,7 @@ using Factory;
 using Proxy;
 using Decorator;
 using FlyWeight;
+using Composite;
 
 
 // #################################### SingletonClass ############################################
@@ -65,3 +66,21 @@ source = new DecoretorPrinter_0(source);
 source = new DecoretorPrinter_1(source);
 source = new DecoretorPrinter_1(source);
 source.PrintText();
+
+// ############################################ Composite #####################################
+CompoundBox mainBox = new(); // 5 + 12 + 9 + 2 = 19 + 9 = 28
+CompoundBox smallBox_0 = new(); // 2 + 5 + 2 = 9
+CompoundBox smallBox_1 = new(); // 10 + 2 = 12
+
+smallBox_0.AddItem(new Item(5)); 
+smallBox_0.AddItem(new Item(2));
+
+smallBox_1.AddItem(new Item(10));
+
+mainBox.AddItem(new Item(5));
+mainBox.AddItem(smallBox_0);
+mainBox.AddItem(smallBox_1);
+
+if(mainBox.Price() != 28)
+    throw new Exception("Wrong price!");
+
